@@ -1,0 +1,2 @@
+# koregindev.github.io
+плагин
