@@ -1,25 +1,43 @@
 document.addEventListener('DOMContentLoaded', function(){
-	let switcher_close = document.getElementById('modal-btn-switcher');
-	let modal_window = document.getElementById('modal-slider');
-	let switcher_open = document.getElementById('modal-slider-open');
+	//для камбека
+	let comeback = document.getElementById('comeback');
+	let comeback_close = document.getElementById('comeback_close');
 
-	switcher_open.addEventListener('click', function(){
-		modal_window.style.opacity = 1;
-		modal_window.style.visibility = 'visible';
+	document.addEventListener('mouseleave', function(x){
+		if (x.clientY < 0) {
+			comeback.style.display = 'flex';
+		}
 	});
 
-	switcher_close.addEventListener('click', function(){
-		modal_window.style.opacity = 0;
-		modal_window.style.visibility = 'hidden';
-	});
-
-	document.addEventListener('mouseleave', function(e){
-		modal_window.style.opacity = 1;
-		modal_window.style.visibility = 'visible';
+	document.addEventListener('mouseover', function(x){
+		comeback_close.onclick = function(){
+			comeback.style.display = 'none';
+		}	
 	})
+	//для всплывающего окна через 20 секунд
+	let supports = document.getElementById('supports');
+	let supports_close = document.getElementById('supports_close');
 
 	setTimeout(function(){
-		modal_window.style.opacity = 1;
-		modal_window.style.visibility = 'visible';
-	}, 20000)
-});
+		supports.style.display = 'flex';
+	}, 20000);
+
+	supports_close.onclick = function(){
+		supports.style.display = 'none';
+	}
+
+	//для всплывающего окна по вызову id
+	let popup_section = document.getElementById('popup-section');
+	let popup_close = document.getElementById('popup_item');
+	let popup_close1 = document.getElementById('popup_close1');
+
+	popup_close.onclick = function(){
+		popup_section.style.display = 'flex';
+	}
+
+	popup_close1.onclick = function(){
+		popup_section.style.display = 'none';
+	}
+
+	
+})
