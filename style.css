@@ -9,6 +9,8 @@
 	-o-box-sizing: border-box;
 }
 
+
+/* стили для первого рекламного блока */
 .modal_camback_1 {
 	position: fixed;
 	background: rgba(0, 0, 0, 0.8);
@@ -17,13 +19,12 @@
 	bottom: 0;
 	right: 0;
 	display: none;
-	justify-content: center;
-	align-items: center;
 	font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
 .modal_inner_camback {
 	position: absolute;
+	z-index: 999;
 	top: 0;
 	background: #FFC44E;
 	width: 100%;
@@ -41,7 +42,7 @@
 
 .modal_inner_wrapper {
 	position: absolute;
-	background: #FFC09F;
+	background: #FFE09F;
 	width: 0;
 	max-width: 100%;
 	top: 0;
@@ -51,7 +52,7 @@
 }
 
 .circle_icon {
-	background: #FFC09F;
+	background: #FFE09F;
 	width: 30px;
 	display: flex;
 	justify-content: center;
@@ -66,10 +67,43 @@
 	color: black;
 }
 
+/* стили для второго рекламного блока */
+.modal_camback_2 {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	font-family: 'Arial', 'Helvetica', sans-serif;
+	width: 100%;
+}
+
+.modal_camback_text {
+	background-color: rgba(0, 0, 0, 0.8);
+	max-height: 300px;
+	max-width: 100%;
+	height: 300px;
+}
+
+.modal_camback_button {
+	width: 50px;
+	font-weight: bold;
+	height: 30px;
+	background: #FFC44E;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 50%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	transform: translateX(-50%);
+	cursor: pointer;
+}
+
 
 /* показывать блоки если ширина меньше 727 пикселей */
-@media screen and (max-width: 727px) {
+@media screen and (max-device-width: 727px) {
 	.modal_camback_1 {
-		display: flex;
+		display: block;
 	}
+
 }
