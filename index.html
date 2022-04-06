@@ -3,52 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Модальное окно</title>
+	<title>Рекламные блоки</title>
+	<!-- ниже подключены стили для рекламного блока -->
 	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-	<div class="wrapper">
-		<div class="btn-item">
-			<a href="#" id="popup_item">Купить по акции</a>
+	
+
+	<!-- верстка окон -->
+
+	<!-- первый рекламный баннер -->
+	<div class="modal_camback_1" id="modal_camback_1">
+		<!-- полоска загрузки -->
+		<div class="modal_inner_camback">
+			<!-- анимированный блок прокрутки -->
+			<div class="modal_inner_wrapper" id="modal_progressbar"></div>
+			<div class="modal_inner_text">
+				<p>Можно закрыть через</p>
+				<p id="hidden_button" class="closed circle_icon" title="закрыть">×</p>
+				<p class="circle_icon" id="text_counter">5</p>
+			</div>
 		</div>
+
+		<p>Реклама</p>
 	</div>
 
-	<!-- модальные окна -->
-	<div class="popup-banner-block comeback" id="comeback">
-		<!-- чтобы добавлять элементы вставьте ваши теги внуть этого div ниже -->
-		<div class="popup-banner-body">
-			<h2>Вы пытаетесь покинуть сайт?</h2>
-		</div>
-		<!-- кнопка закрытия блока -->
-		<div class="popup-close-item">
-			<i class="fa-solid fa-xmark icon8" title="Закрыть" id="comeback_close"></i>
-		</div>
-	</div>
-
-	<div class="popup-banner-block supports" id="supports">
-		<!-- чтобы добавлять элементы вставьте ваши теги внуть этого div ниже -->
-		<div class="popup-banner-body">
-			<h2>Возникли вопросы? Свяжитесь с нашим менеджером</h2>
-		</div>
-		<!-- кнопка закрытия блока -->
-		<div class="popup-close-item">
-			<i class="fa-solid fa-xmark icon8" title="Закрыть" id="supports_close"></i>
-		</div>
-	</div>
-
-	<div class="popup-banner-block popup-section" id="popup-section">
-		<!-- чтобы добавлять элементы вставьте ваши теги внуть этого div ниже -->
-		<div class="popup-banner-body">
-			<h2>Специальное предложение! Скидка - 50%</h2>
-		</div>
-		<!-- кнопка закрытия блока -->
-		<div class="popup-close-item">
-			<i class="fa-solid fa-xmark icon8" title="Закрыть" id="popup_close1"></i>
-		</div>
-	</div>
-
+	<!-- подключение скрипта -->
 	<script src="script.js"></script>
 </body>
 </html>

@@ -1,89 +1,75 @@
 *,
-*::before,
-*::after{
-	margin: 0;
+*:before,
+*:after {
 	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
 }
 
-html, body {
-	overflow-x: hidden;
-	font-family: 'Roboto', sans-serif;
-}
-
-.wrapper{
-	height: 100vh;
-	width: 100vw;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.wrapper a{
-	text-decoration: none;
-	color: #fff;
-	display: inline-block;
-	padding: 10px 15px;
-	font-size: 14px;
-	background: #0d6efd;
-	margin-right: 5px;
-	border-radius: 10px;
-	transition: all .1s linear;
-}
-
-.wrapper a:hover{
-	transform: scale(1.2);
-}
-
-.popup-banner-block{
+.modal_camback_1 {
 	position: fixed;
+	background: rgba(0, 0, 0, 0.8);
 	top: 0;
 	left: 0;
-	right: 0;
 	bottom: 0;
-	display: flex;
+	right: 0;
+	display: none;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(74, 119, 208, 0.43);
+	font-family: 'Arial', 'Helvetica', sans-serif;
 }
 
-.popup-banner-body{
-	width: 430px;
-	height: 300px;
-	background: #fff;
-	border-radius: 8px;
-	text-align: center;
-}
-
-.popup-close-item{
-	width: 50px;
-	height: 50px;
-	background: #fff;
+.modal_inner_camback {
 	position: absolute;
-	border-radius: 50%;
-	right: 30px;
-	top: 30px;
+	top: 0;
+	background: #FFC44E;
+	width: 100%;
+	padding: 5px 12px;
+}
+
+.modal_inner_text {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	align-items: center;
+	z-index: 10;
+	width: 100%;
+}
+
+.modal_inner_wrapper {
+	position: absolute;
+	background: #FFC09F;
+	width: 0;
+	max-width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow-x: none;
+}
+
+.circle_icon {
+	background: #FFC09F;
+	width: 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	height: 30px;
+	border-radius: 50%;
 	cursor: pointer;
 }
 
-.popup-close-item i {
-	font-size: 28px;
+.closed {
+	font-size: 14px;
+	color: black;
 }
 
-.comeback{
-	display: none;
-	z-index: 100;
-}
 
-.supports{
-	display: none;
-	z-index: 100;
-}
-
-.popup-section{
-	display: none;
-	z-index: 100;
+/* показывать блоки если ширина меньше 727 пикселей */
+@media screen and (max-width: 727px) {
+	.modal_camback_1 {
+		display: flex;
+	}
 }

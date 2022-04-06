@@ -1,43 +1,41 @@
-document.addEventListener('DOMContentLoaded', function(){
-	//для камбека
-	let comeback = document.getElementById('comeback');
-	let comeback_close = document.getElementById('comeback_close');
+// первый рекламный баннер
+let myDiv1 = document.getElementById('modal_camback_1');
+let myScroll1 = document.getElementById('modal_progressbar');
+let text_counter = document.getElementById('text_counter');
+let close_button1 = document.getElementById('hidden_button');
 
-	document.addEventListener('mouseleave', function(x){
-		if (x.clientY < 0) {
-			comeback.style.display = 'flex';
-		}
-	});
+close_button1.style.opacity = 0;
 
-	document.addEventListener('mouseover', function(x){
-		comeback_close.onclick = function(){
-			comeback.style.display = 'none';
-		}	
-	})
-	//для всплывающего окна через 20 секунд
-	let supports = document.getElementById('supports');
-	let supports_close = document.getElementById('supports_close');
+let steps = 5;
+let my_width1 = 0;
 
-	setTimeout(function(){
-		supports.style.display = 'flex';
-	}, 20000);
+if (window.screen.width <= 727) {
+	setInterval(function() {
+	text_counter.innerText = steps;
 
-	supports_close.onclick = function(){
-		supports.style.display = 'none';
+	steps -= 1;
+
+	my_width1 += 20;
+
+	myScroll1.style.width = my_width1 + '%';
+
+	if (my_width1 > 80) {
+		text_counter.style.background = '#FFC44E';
 	}
 
-	//для всплывающего окна по вызову id
-	let popup_section = document.getElementById('popup-section');
-	let popup_close = document.getElementById('popup_item');
-	let popup_close1 = document.getElementById('popup_close1');
-
-	popup_close.onclick = function(){
-		popup_section.style.display = 'flex';
+	if (my_width1 >= 100) {
+		my_width1 = 100;
 	}
 
-	popup_close1.onclick = function(){
-		popup_section.style.display = 'none';
+	if (text_counter.innerText === "0") {
+		text_counter.style.display = 'none';
+		close_button1.style.background = "#FFC44E";
+		close_button1.style.opacity = 1;
+
+		close_button1.addEventListener('click', function() {
+			myDiv1.style.display = 'none';
+		})
 	}
 
-	
-})
+	}, 1000);
+}
