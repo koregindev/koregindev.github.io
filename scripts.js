@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	if (window.screen.width <= 727) {
 		setTimeout(function() {
 			thumb_one.style.display = 'block';
+			document.body.style.overflow = 'hidden';
 
 			myIterator = setInterval(function(){
 				thumb_text.innerText = thumb_sec;
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			thumb_exit.addEventListener('click', function() {
 				thumb_one.style.display = 'none';
+				document.body.style.overflow = 'scroll';
 			});
 
 		}, 15000);

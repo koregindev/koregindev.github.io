@@ -12,6 +12,7 @@
 	position: fixed;
 	font-family:  'Arial', 'Helvetica', sans-serif;
 	display: none;
+	z-index: 1000;
 }
 
 .thumbnails_text {
